@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load staticfiles %}
+<div class="feeds">
+    <div class="tabular">
+        <div class="add-row">
+            <img src="/static/images/{{img}}" alt="My image" width="" height="100px"/>
+        </div>
+        <div class="add-row">
+            Results will be displayed here {{ result }}
+        </div>
+    </div>
+</div>
+{% endblock %}

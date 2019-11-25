@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<br>
+<div class="feeds">
+    <form class="form-contact" action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in form %}
+        <fieldset class="form-group">
+          <label class="control-label" for="id_{{ field.name }}">Choose a Image to process</label>
+            <div class="form-control">
+              <input type="file" class="form-control"
+                name="{{ field.name }}"
+                id="id_{{ field.name }}"
+                value="{{ field.value }}" >
+                <p class="help-text">{{ field.help_text }} </p>
+               </div>
+        </fieldset>
+    {% endfor %}
+       <input type="submit" value="Submit"  class="btn btn-primary">
+    </form>
+</div>
+{% endblock %}
